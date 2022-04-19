@@ -1,0 +1,9 @@
+.mainCategory li:hover,
+.subCategory li:hover {
+  cursor: pointer;
+}
+
+.subCategory li:hover {
+  text-decoration: underline;
+  color: #ff8e14;
+}
