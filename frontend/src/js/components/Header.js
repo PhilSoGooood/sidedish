@@ -1,5 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { searchIcon, userIcon, myCartIcon } from "../constants/iconPath.js";
 import { category } from "../data/category.js";
+import "../../css/Header.css";
 
 function Header() {
   const mainCategoryList = category.map((element) => <li key={element.id}>{element.mainCategory.title}</li>);
@@ -11,15 +13,23 @@ function Header() {
     </ul>
   ));
 
+  const [subCategoryLayer, setSubCategoryLayer] = useState(false);
+
   return (
-    <>
+    <header className="header">
       <h1 className="brandHeader">Ordering</h1>
       <div className="navBar">
-        <div className="navLeftBar">
-          <div className="MainCategory">
+        <div
+          className="navLeftBar"
+          onMouseOver={() => setSubCategoryLayer(true)}
+          onMouseOut={() => setSubCategoryLayer(false)}
+        >
+          <div className="mainCategory">
             <ul>{mainCategoryList}</ul>
           </div>
-          <div className="subCategory">{subCategoryList}</div>
+          <div className="subCategory" style={{ display: subCategoryLayer ? "flex" : "none" }}>
+            {subCategoryList}
+          </div>
         </div>
         <div className="navRightBar">
           <a href="#!" className="search">
@@ -33,7 +43,7 @@ function Header() {
           </a>
         </div>
       </div>
-    </>
+    </header>
   );
 }
 
