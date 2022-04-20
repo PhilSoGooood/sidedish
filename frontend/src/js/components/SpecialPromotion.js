@@ -5,9 +5,21 @@ import {goodsData} from '../data/goods.js';
 import '../../css/SpecialPromotion.css';
 
 function SpecialPromotion() {
-  const tab = '풍부한 고기 반찬';
+  const [tabState, setTabState] = useState('풍부한 고기 반찬');
+
+  const tabList = goodsData.map(element => (
+    <li
+      key={element.id}
+      onClick={() => {
+        setTabState(element.tab.title);
+      }}
+    >
+      {element.tab.title}
+    </li>
+  ));
+
   const bestSideDish = goodsData
-    .filter(element => element.tab.title === tab)[0]
+    .filter(element => element.tab.title === tabState)[0]
     .tab.goods.map(element => (
       <li key={element.id}>
         <GoodsBlock
@@ -27,12 +39,7 @@ function SpecialPromotion() {
         <p>한 번 주문하면 두 번 반하는 반찬</p>
       </h2>
       <h4 className="tab">
-        <ul className="tabList">
-          <li className="selected">풍성한 고기 반찬</li>
-          <li>편리한 반찬 세트</li>
-          <li>맛있는 제철 요리</li>
-          <li>우리 아이 영양 반찬</li>
-        </ul>
+        <ul className="tabList">{tabList}</ul>
       </h4>
       <div className="bestSideDishContainer">
         <ul className="bestSideDishList">{bestSideDish}</ul>
