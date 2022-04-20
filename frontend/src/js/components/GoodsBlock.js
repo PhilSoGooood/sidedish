@@ -26,11 +26,11 @@ function GoodsBlock(props) {
           <p className="discountedPrice">{discountedPrice + '원'}</p>
           <p className="regularPrice">{regularPrice + '원'}</p>
         </div>
-        <div className="goodsLabel">
-          {eventLabelElement}
-          {launchingLabelElement}
-        </div>
       </section>
+      <div className="goodsLabel">
+        {eventLabelElement}
+        {launchingLabelElement}
+      </div>
     </div>
   );
 }

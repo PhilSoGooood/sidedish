@@ -5,14 +5,17 @@
 }
 
 .tab {
-  width: 692px;
-  height: 48px;
+  width: 692px; 
 }
 
 .theme,
 .tab ul {
   display: flex;
   align-items: center;
+}
+
+.tab li:hover{
+  cursor: pointer;
 }
 
 .theme {
@@ -38,4 +41,15 @@
 
 .selected {
   border-bottom: 1px solid;
+}
+
+.bestSideDishContainer {
+  border-color: #EBEBEB;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 34px 0px 56px 0px;
+}
+
+.bestSideDishList {
+  display: flex; 
 }
