@@ -14,7 +14,7 @@ export const category = [
     mainCategory: {
       //
       title: "뜨끈한 메인요리",
-      subCategory: [{ id: 10, title: "국/탕/찌개" }],
+      subCategory: [{ id: 1, title: "국/탕/찌개" }],
     },
   },
   {
