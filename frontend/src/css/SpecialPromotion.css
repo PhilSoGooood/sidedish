@@ -1,0 +1,41 @@
+.specialPromotion {
+  padding: 0px 80px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+}
+
+.tab {
+  width: 692px;
+  height: 48px;
+}
+
+.theme,
+.tab ul {
+  display: flex;
+  align-items: center;
+}
+
+.theme {
+  width: 615px;
+  padding: 56px 0px 24px 0px;
+}
+
+.theme p {
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.specialPromotionIcon {
+  margin-right: 16px;
+}
+
+.tab li {
+  margin-right: 32px;
+  padding-bottom: 16px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.selected {
+  border-bottom: 1px solid;
+}
