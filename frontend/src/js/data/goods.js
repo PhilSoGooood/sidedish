@@ -7,47 +7,44 @@ export const goodsData = [
       goods: [
         {
           id: 1,
-          thumb:
-            'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
+          thumb: 'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
           name: '오리 주물럭_반조리',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 12640 },
-            { id: 2, type: 'regular', price: 15800 },
+            {id: 1, type: 'discounted', price: 12640},
+            {id: 2, type: 'regular', price: 15800},
           ],
           label: [
-            { type: 'event', exist: true },
-            { type: 'lauching', exist: false },
+            {type: 'event', exist: true},
+            {type: 'lauching', exist: false},
           ],
         },
         {
           id: 2,
-          thumb:
-            'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
+          thumb: 'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
           name: '오리 주물럭_반조리',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 12640 },
-            { id: 2, type: 'regular', price: 15800 },
+            {id: 1, type: 'discounted', price: 12640},
+            {id: 2, type: 'regular', price: 15800},
           ],
           label: [
-            { type: 'event', exist: false },
-            { type: 'lauching', exist: false },
+            {type: 'event', exist: false},
+            {type: 'lauching', exist: false},
           ],
         },
         {
           id: 3,
-          thumb:
-            'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
+          thumb: 'https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg',
           name: '오리 주물럭_반조리',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 12640 },
-            { id: 2, type: 'regular', price: 15800 },
+            {id: 1, type: 'discounted', price: 12640},
+            {id: 2, type: 'regular', price: 15800},
           ],
           label: [
-            { type: 'event', exist: true },
-            { type: 'lauching', exist: true },
+            {type: 'event', exist: true},
+            {type: 'lauching', exist: true},
           ],
         },
       ],
@@ -66,12 +63,12 @@ export const goodsData = [
           name: '소갈비찜',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 26100 },
-            { id: 2, type: 'regular', price: 28900 },
+            {id: 1, type: 'discounted', price: 26100},
+            {id: 2, type: 'regular', price: 28900},
           ],
           label: [
-            { type: 'event', exist: true },
-            { type: 'lauching', exist: false },
+            {type: 'event', exist: true},
+            {type: 'lauching', exist: false},
           ],
         },
         {
@@ -81,12 +78,12 @@ export const goodsData = [
           name: '소갈비찜',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 26100 },
-            { id: 2, type: 'regular', price: 28900 },
+            {id: 1, type: 'discounted', price: 26100},
+            {id: 2, type: 'regular', price: 28900},
           ],
           label: [
-            { type: 'event', exist: false },
-            { type: 'lauching', exist: false },
+            {type: 'event', exist: false},
+            {type: 'lauching', exist: false},
           ],
         },
         {
@@ -96,12 +93,12 @@ export const goodsData = [
           name: '소갈비찜',
           description: '감칠맛 나는 매콤한 양념',
           price: [
-            { id: 1, type: 'discounted', price: 26100 },
-            { id: 2, type: 'regular', price: 28900 },
+            {id: 1, type: 'discounted', price: 26100},
+            {id: 2, type: 'regular', price: 28900},
           ],
           label: [
-            { type: 'event', exist: true },
-            { type: 'lauching', exist: true },
+            {type: 'event', exist: true},
+            {type: 'lauching', exist: true},
           ],
         },
       ],

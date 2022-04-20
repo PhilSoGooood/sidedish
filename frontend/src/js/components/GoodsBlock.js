@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
-import { eventLabelIcon, launchingLabelIcon } from '../constants/iconPath.js';
+import React, {useState} from 'react';
+import {eventLabelIcon, launchingLabelIcon} from '../constants/iconPath.js';
 import '../../css/GoodsBlock.css';
 
 function GoodsBlock(props) {
-  const [discountedPrice, regularPrice] = props.goodsPrice.map(
-    (element) => element.price
-  );
-  const [eventLabel, launchingLabel] = props.goodsLabel.map(
-    (element) => element.exist
-  );
+  const [discountedPrice, regularPrice] = props.goodsPrice.map(element => element.price);
+  const [eventLabel, launchingLabel] = props.goodsLabel.map(element => element.exist);
 
   return (
     <div className="goodsBlock">
@@ -21,21 +17,9 @@ function GoodsBlock(props) {
           <p className="regularPrice">{regularPrice + '원'}</p>
         </div>
         <div className="goodsLabel">
-          {eventLabel ? (
-            <img
-              className="eventLabel"
-              src={eventLabelIcon}
-              alt="eventLabelIcon"
-            ></img>
-          ) : (
-            <></>
-          )}
+          {eventLabel ? <img className="eventLabel" src={eventLabelIcon} alt="eventLabelIcon"></img> : <></>}
           {launchingLabel ? (
-            <img
-              className="launchingLabel"
-              src={launchingLabelIcon}
-              alt="launchingLabelIcon"
-            ></img>
+            <img className="launchingLabel" src={launchingLabelIcon} alt="launchingLabelIcon"></img>
           ) : (
             <></>
           )}
@@ -45,4 +29,4 @@ function GoodsBlock(props) {
   );
 }
 
-export { GoodsBlock };
+export {GoodsBlock};

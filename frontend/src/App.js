@@ -1,5 +1,5 @@
-import { Header } from './js/components/Header.js';
-import { SpecialPromotion } from './js/components/SpecialPromotion.js';
+import {Header} from './js/components/Header.js';
+import {SpecialPromotion} from './js/components/SpecialPromotion.js';
 
 function App() {
   return (
