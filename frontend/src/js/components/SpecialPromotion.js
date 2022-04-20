@@ -9,6 +9,7 @@ function SpecialPromotion() {
 
   const tabList = goodsData.map(element => (
     <li
+      className={tabState === element.tab.title ? 'selected' : ''}
       key={element.id}
       onClick={() => {
         setTabState(element.tab.title);
