@@ -7,13 +7,16 @@ import '../../css/SpecialPromotion.css';
 function SpecialPromotion() {
   const [tabState, setTabState] = useState('풍부한 고기 반찬');
 
+  const handleTabState = ({target}) => {
+    setTabState(target.title);
+  };
+
   const tabList = goodsData.map(element => (
     <li
       className={tabState === element.tab.title ? 'selected' : ''}
       key={element.id}
-      onClick={() => {
-        setTabState(element.tab.title);
-      }}
+      title={element.tab.title}
+      onClick={handleTabState}
     >
       {element.tab.title}
     </li>
