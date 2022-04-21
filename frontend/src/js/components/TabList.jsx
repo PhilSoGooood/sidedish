@@ -1,8 +1,10 @@
 import {goodsData} from '../data/goods.js';
 
 function TabList({tabState, setTabState}) {
-  const handleTabState = ({target}) => {
-    setTabState(target.title);
+  const tabStateHandler = ({target}) => {
+    setTabState(prevState => {
+      return {...prevState, category: target.title};
+    });
   };
 
   return goodsData.map(element => (
@@ -10,7 +12,7 @@ function TabList({tabState, setTabState}) {
       className={tabState === element.tab.title ? 'selected' : ''}
       key={element.id}
       title={element.tab.title}
-      onClick={handleTabState}
+      onClick={tabStateHandler}
     >
       {element.tab.title}
     </li>

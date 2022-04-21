@@ -5,7 +5,7 @@ import {TabList} from './TabList.jsx';
 import '../../css/SpecialPromotion.css';
 
 function SpecialPromotion() {
-  const [tabState, setTabState] = useState('풍부한 고기 반찬');
+  const [tabState, setTabState] = useState({category: '풍부한 고기 반찬'});
 
   return (
     <div className="specialPromotion">
@@ -16,12 +16,12 @@ function SpecialPromotion() {
         </h2>
         <h4 className="tab">
           <ul className="tabList">
-            <TabList tabState={tabState} setTabState={setTabState} />
+            <TabList tabState={tabState.category} setTabState={setTabState} />
           </ul>
         </h4>
         <div className="bestSideDishContainer">
           <ul className="bestSideDishList">
-            <BestSideDish tabState={tabState} />
+            <BestSideDish tabState={tabState.category} />
           </ul>
         </div>
       </div>
