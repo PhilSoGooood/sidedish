@@ -1,8 +1,8 @@
-import {goodsData} from '../data/goods.js';
+import {bestGoodsData} from '../data/bestGoods.js';
 import {GoodsBlock} from './GoodsBlock.jsx';
 
 function BestSideDish({tabState}) {
-  return goodsData
+  return bestGoodsData
     .filter(element => element.tab.title === tabState)[0]
     .tab.goods.map(element => (
       <li key={element.id}>

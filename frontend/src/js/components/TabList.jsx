@@ -1,4 +1,4 @@
-import {goodsData} from '../data/goods.js';
+import {bestGoodsData} from '../data/bestGoods.js';
 
 function TabList({tabState, setTabState}) {
   const tabStateHandler = ({target}) => {
@@ -7,7 +7,7 @@ function TabList({tabState, setTabState}) {
     });
   };
 
-  return goodsData.map(element => (
+  return bestGoodsData.map(element => (
     <li
       className={tabState === element.tab.title ? 'selected' : ''}
       key={element.id}
