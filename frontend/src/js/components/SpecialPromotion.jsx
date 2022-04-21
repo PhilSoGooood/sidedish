@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {specialPromotionIcon} from '../constants/iconPath.js';
-import {GoodsBlock} from './GoodsBlock.js';
+import {BestSideDish} from './BestSideDish.jsx';
 import {goodsData} from '../data/goods.js';
 import '../../css/SpecialPromotion.css';
 
@@ -19,20 +19,6 @@ function SpecialPromotion() {
     </li>
   ));
 
-  const bestSideDish = goodsData
-    .filter(element => element.tab.title === tabState)[0]
-    .tab.goods.map(element => (
-      <li key={element.id}>
-        <GoodsBlock
-          thumb={element.thumb}
-          name={element.name}
-          description={element.description}
-          price={element.price}
-          label={element.label}
-        />
-      </li>
-    ));
-
   return (
     <div className="specialPromotion">
       <div className="innerSpecialPromotion">
@@ -44,7 +30,9 @@ function SpecialPromotion() {
           <ul className="tabList">{tabList}</ul>
         </h4>
         <div className="bestSideDishContainer">
-          <ul className="bestSideDishList">{bestSideDish}</ul>
+          <ul className="bestSideDishList">
+            <BestSideDish tabState={tabState} />
+          </ul>
         </div>
       </div>
     </div>
