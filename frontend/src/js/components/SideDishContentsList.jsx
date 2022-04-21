@@ -8,10 +8,10 @@ function SideDishContentsList() {
     <li key={element.id}>
       <h3 className="sideDishCategory">{element.title}</h3>
       <div className="event-slider">
-        <button>
+        <button className="prevButton">
           <img className="prevButtonIcon" src={prevButtonIcon} alt="prevButtonIcon"></img>
         </button>
-        <button>
+        <button className="nextButton">
           <img className="nextButtonIcon" src={nextButtonIcon} alt="nextButtonIcon"></img>
         </button>
         <div className="sideDishContainer">

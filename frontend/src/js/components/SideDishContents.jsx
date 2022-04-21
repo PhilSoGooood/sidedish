@@ -1,4 +1,5 @@
 import {SideDishContentsList} from './SideDishContentsList.jsx';
+import '../../css/SideDishContents.css';
 
 function SideDishContents() {
   return (

@@ -1,17 +1,18 @@
 .sideDishContainer {
-    width: 1280px;
     overflow: hidden;
 }
 
 .sideDishList {
     display: flex; 
     margin: 0 auto;
+    margin-bottom: 79px;
 }
 
 .sideDishList .goodsBlock{
     width:302px;
     height:456px;
 }
+
 .sideDishList .goodsBlock .thumb{
     width:302px;
     height: 302px;
