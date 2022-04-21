@@ -24,11 +24,11 @@ function SpecialPromotion() {
     .tab.goods.map(element => (
       <li key={element.id}>
         <GoodsBlock
-          goodsTumb={element.thumb}
-          goodsName={element.name}
-          goodsDescription={element.description}
-          goodsPrice={element.price}
-          goodsLabel={element.label}
+          thumb={element.thumb}
+          name={element.name}
+          description={element.description}
+          price={element.price}
+          label={element.label}
         />
       </li>
     ));
