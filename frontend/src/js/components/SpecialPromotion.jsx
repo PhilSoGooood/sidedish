@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import {bestGoodsData} from '../data/bestGoods.js';
 import {specialPromotionIcon} from '../constants/iconPath.js';
-import {BestSideDish} from './BestSideDish.jsx';
+import {SideDish} from './SideDish.jsx';
 import {TabList} from './TabList.jsx';
 import '../../css/SpecialPromotion.css';
 
@@ -20,7 +21,7 @@ function SpecialPromotion() {
       </h4>
       <div className="bestSideDishContainer">
         <ul className="bestSideDishList">
-          <BestSideDish tabState={tabState.category} />
+          <SideDish type="best" data={bestGoodsData} tabState={tabState.category} />
         </ul>
       </div>
     </div>

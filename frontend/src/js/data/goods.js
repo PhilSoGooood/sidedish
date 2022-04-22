@@ -1,7 +1,7 @@
 export const goodsData = [
   {
     id: 1,
-    title: '풍부한 고기 반찬',
+    title: '든든한 메인요리',
     goods: [
       {
         id: 1,
@@ -107,7 +107,7 @@ export const goodsData = [
   },
   {
     id: 2,
-    title: '편리한 반찬 세트 ',
+    title: '뜨끈한 메인요리',
     goods: [
       {
         id: 1,
@@ -172,7 +172,7 @@ export const goodsData = [
   },
   {
     id: 3,
-    title: '풍부한 고기 반찬',
+    title: '정갈한 밑반찬',
     goods: [
       {
         id: 1,

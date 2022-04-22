@@ -16,7 +16,7 @@ function SideDishContentsList() {
         </button>
         <div className="sideDishContainer">
           <ul className="sideDishList">
-            <SideDish goods={element.goods} />
+            <SideDish type="origin" data={element.goods} />
           </ul>
         </div>
       </div>
