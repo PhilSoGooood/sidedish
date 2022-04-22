@@ -21,11 +21,10 @@ function Slider({data}) {
     setPosition(
       sliderState.clickedButton === 'nextButton' ? position - goodBlockWidth : position + goodBlockWidth,
     );
-
-    const why =
+    const currentPosition =
       sliderState.clickedButton === 'nextButton' ? position - goodBlockWidth : position + goodBlockWidth;
 
-    sliderState.list.style.transform = `translateX(${why}px)`;
+    sliderState.list.style.transform = `translateX(${currentPosition}px)`;
     sliderState.list.style.transition = '0.2s ease-out';
   }, [sliderState]);
 
