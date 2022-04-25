@@ -1,22 +1,28 @@
-import {bestGoodsData} from 'data';
+import styled, {css} from 'styled-components';
 
-function TabList({tabState, setTabState}) {
+const TabItem = styled.li`
+  ${({tabState, title}) => {
+    return (
+      tabState === title &&
+      css`
+        border-bottom: 1px solid;
+      `
+    );
+  }}
+`;
+
+function TabList({tab, tabState, setTabState}) {
   const handleTabState = ({target}) => {
     setTabState(prevState => {
       return {...prevState, category: target.title};
     });
   };
 
-  return bestGoodsData.map(element => (
-    <li
-      className={tabState === element.tab.title ? 'selected' : ''}
-      key={element.id}
-      title={element.tab.title}
-      onClick={handleTabState}
-    >
-      {element.tab.title}
-    </li>
-  ));
+  return (
+    <TabItem tabState={tabState} title={tab.title} onClick={handleTabState}>
+      {tab.title}
+    </TabItem>
+  );
 }
 
 export {TabList};
