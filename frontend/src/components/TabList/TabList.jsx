@@ -1,15 +1,4 @@
-import styled, {css} from 'styled-components';
-
-const TabItem = styled.li`
-  ${({tabState, title}) => {
-    return (
-      tabState === title &&
-      css`
-        border-bottom: 1px solid;
-      `
-    );
-  }}
-`;
+import {TabItem} from './TabList.styled';
 
 function TabList({tab, tabState, setTabState}) {
   const handleTabState = ({target}) => {
