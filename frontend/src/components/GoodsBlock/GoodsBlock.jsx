@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {eventLabelIcon, launchingLabelIcon, deliveryIcon} from '../constants/iconPath.js';
-import '../../css/GoodsBlock.css';
+import {eventLabelIcon, launchingLabelIcon, deliveryIcon} from 'constants';
+import './GoodsBlock.css';
 
 function GoodsBlock({thumb, name, description, price, label}) {
   const [isHover, setIsHover] = useState(false);

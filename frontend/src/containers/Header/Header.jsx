@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {pageHeaderIcon, searchIcon, userIcon, myCartIcon} from '../constants/iconPath.js';
-import {category} from '../data/category.js';
-import {NavIcon} from './NavIcon.jsx';
-import '../../css/Header.css';
+import {pageHeaderIcon, searchIcon, userIcon, myCartIcon} from 'constants';
+import {category} from 'data';
+import {NavIcon} from 'components';
+import './Header.css';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
