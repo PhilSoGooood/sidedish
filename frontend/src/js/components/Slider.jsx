@@ -25,7 +25,7 @@ function Slider({data}) {
 
     sliderState.list.style.transform = `translateX(${position}px)`;
     sliderState.list.style.transition = '0.2s ease-out';
-  }, [sliderState]);
+  }, [sliderState, position]);
 
   return (
     <div className="event-slider">
