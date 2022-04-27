@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {eventLabelIcon, launchingLabelIcon, deliveryIcon} from 'constants';
-import './GoodsBlock.css';
+import React, {useState} from "react";
+import {eventLabelIcon, launchingLabelIcon, deliveryIcon} from "constants";
+import "./GoodsBlock.css";
 
-function GoodsBlock({thumb, name, description, price, label}) {
+function GoodsBlock({thumb, name, description, price, discountedRate, eventBadge}) {
   const [isHover, setIsHover] = useState(false);
-  const [discountedPrice, regularPrice] = price.map(element => element.price);
-  const [eventLabel, launchingLabel] = label.map(element => element.exist);
+  const percentage = 0.01;
+  const discountedPrice = price - discountedRate * percentage * price;
 
   return (
     <div className="goodsBlock">
@@ -21,14 +21,21 @@ function GoodsBlock({thumb, name, description, price, label}) {
         <h4 className="name"> {name}</h4>
         <p className="description">{description}</p>
         <div className="price">
-          <p className="discountedPrice">{Number(discountedPrice).toLocaleString('en') + '원'}</p>
-          <p className="regularPrice">{Number(regularPrice).toLocaleString('en') + '원'}</p>
+          {price && (
+            <>
+              <p className="discountedPrice">{Number(discountedPrice).toLocaleString("en") + "원"}</p>
+              <p className="regularPrice">{Number(price).toLocaleString("en") + "원"}</p>
+            </>
+          )}
         </div>
       </section>
-      <div className="label">
-        {eventLabel && <img className="eventLabel" src={eventLabelIcon} alt="eventLabelIcon"></img>}
-        {launchingLabel && (
-          <img className="launchingLabel" src={launchingLabelIcon} alt="launchingLabelIcon"></img>
+      <div className="eventBadge">
+        {eventBadge && (
+          <img
+            className="eventBadge"
+            src={eventBadge === "event" ? eventLabelIcon : launchingLabelIcon}
+            alt="eventBadgeIcon"
+          ></img>
         )}
       </div>
     </div>
