@@ -1,14 +1,27 @@
-import React, {useState, useEffect} from 'react';
-import {prevButtonIcon, nextButtonIcon} from 'constants';
-import {GoodsBlock} from 'components';
+import React, {useState, useEffect} from "react";
+import {fetchData} from "utils/utils";
+import {serverURL} from "constants/urlPath";
+import {prevButtonIcon, nextButtonIcon} from "constants";
+import {GoodsBlock} from "components";
 
-function Slider({goodsData}) {
-  const [sliderState, setSliderState] = useState({clickedButton: '', list: ''});
+function Slider({sideDishTitle}) {
+  const [goodsData, setGoodsData] = useState([]);
+  const [sliderState, setSliderState] = useState({clickedButton: "", list: ""});
   const [position, setPosition] = useState(0);
 
+  const fetchAPI = async () => {
+    fetchData(`${serverURL}/${sideDishTitle}`).then(data => {
+      setGoodsData(data);
+    });
+  };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
+
   const handleClickedButton = ({target}) => {
-    const current = target.closest('button').className;
-    const listElement = target.closest('.event-slider').querySelector('.sideDishList');
+    const current = target.closest("button").className;
+    const listElement = target.closest(".event-slider").querySelector(".sideDishList");
 
     setSliderState({
       ...sliderState,
@@ -17,14 +30,14 @@ function Slider({goodsData}) {
     });
 
     const goodBlockWidth = 326;
-    setPosition(current === 'nextButton' ? position - goodBlockWidth : position + goodBlockWidth);
+    setPosition(current === "nextButton" ? position - goodBlockWidth : position + goodBlockWidth);
   };
 
   useEffect(() => {
     if (!sliderState.clickedButton) return;
 
     sliderState.list.style.transform = `translateX(${position}px)`;
-    sliderState.list.style.transition = '0.2s ease-out';
+    sliderState.list.style.transition = "0.2s ease-out";
   }, [sliderState, position]);
 
   return (
@@ -37,11 +50,21 @@ function Slider({goodsData}) {
       </button>
       <div className="sideDishContainer">
         <ul className="sideDishList">
-          {goodsData.map(({id, thumb, name, description, price, label}) => (
-            <li key={id}>
-              <GoodsBlock thumb={thumb} name={name} description={description} price={price} label={label} />
-            </li>
-          ))}
+          {goodsData.map(
+            ({id, image, productName, description, price, eventBadge, delivery, discountedRate}) => (
+              <li key={id}>
+                <GoodsBlock
+                  thumb={image}
+                  name={productName}
+                  description={description}
+                  price={price}
+                  eventBadge={eventBadge}
+                  discountedRate={discountedRate}
+                  delivery={delivery}
+                />
+              </li>
+            ),
+          )}
         </ul>
       </div>
     </div>
