@@ -21,7 +21,7 @@ function GoodsBlock({thumb, name, description, price, discountedRate, delivery, 
         <h4 className="name"> {name}</h4>
         <p className="description">{description}</p>
         <div className="price">
-          {discountedRate !== 0 && (
+          {discountedRate && (
             <p className="discountedPrice">{Number(discountedPrice).toLocaleString("en") + "원"}</p>
           )}
           <p className="regularPrice">{Number(price).toLocaleString("en") + "원"}</p>
