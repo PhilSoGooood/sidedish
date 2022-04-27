@@ -1,9 +1,10 @@
-import styled, {css} from 'styled-components';
+import styled, {css} from "styled-components";
 
 const TabItem = styled.li`
   ${({tabState, title}) => {
+    console.log(tabState, title);
     return (
-      tabState === title &&
+      tabState.category === title &&
       css`
         border-bottom: 1px solid;
       `
