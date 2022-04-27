@@ -2,7 +2,6 @@ import styled, {css} from "styled-components";
 
 const TabItem = styled.li`
   ${({tabState, title}) => {
-    console.log(tabState, title);
     return (
       tabState.category === title &&
       css`

@@ -15,10 +15,6 @@ function Slider({sideDishTitle}) {
     });
   };
 
-  useEffect(() => {
-    fetchAPI();
-  }, []);
-
   const handleClickedButton = ({target}) => {
     const current = target.closest("button").className;
     const listElement = target.closest(".event-slider").querySelector(".sideDishList");
@@ -32,6 +28,10 @@ function Slider({sideDishTitle}) {
     const goodBlockWidth = 326;
     setPosition(current === "nextButton" ? position - goodBlockWidth : position + goodBlockWidth);
   };
+
+  useEffect(() => {
+    fetchAPI();
+  }, []);
 
   useEffect(() => {
     if (!sliderState.clickedButton) return;
