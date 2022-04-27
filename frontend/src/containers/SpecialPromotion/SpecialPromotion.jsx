@@ -31,7 +31,7 @@ function SpecialPromotion() {
       <BestSideDishContainer>
         <BestSideDishList>
           {goodsData.map(
-            ({image, productName, description, price, eventBadge, delivery, discountedRate}, index) => (
+            ({image, productName, description, price, eventBadge, early_delivery, discountedRate}, index) => (
               <li key={index}>
                 <GoodsBlock
                   thumb={image}
@@ -40,7 +40,7 @@ function SpecialPromotion() {
                   price={price}
                   eventBadge={eventBadge}
                   discountedRate={discountedRate}
-                  delivery={delivery}
+                  delivery={early_delivery}
                 />
               </li>
             ),

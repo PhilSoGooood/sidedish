@@ -51,7 +51,7 @@ function Slider({sideDishTitle}) {
       <div className="sideDishContainer">
         <ul className="sideDishList">
           {goodsData.map(
-            ({id, image, productName, description, price, eventBadge, delivery, discountedRate}) => (
+            ({id, image, productName, description, price, eventBadge, early_delivery, discountedRate}) => (
               <li key={id}>
                 <GoodsBlock
                   thumb={image}
@@ -60,7 +60,7 @@ function Slider({sideDishTitle}) {
                   price={price}
                   eventBadge={eventBadge}
                   discountedRate={discountedRate}
-                  delivery={delivery}
+                  delivery={early_delivery}
                 />
               </li>
             ),
