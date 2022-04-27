@@ -18,9 +18,8 @@ function SpecialPromotion() {
   const [goodsData, setGoodsData] = useState([]);
 
   const fetchAPI = async title => {
-    fetchData(`${serverURL}/${title}`).then(data => {
-      setGoodsData(data);
-    });
+    const data = await fetchData(`${serverURL}/${title}`);
+    setGoodsData(data);
   };
 
   useEffect(() => {
