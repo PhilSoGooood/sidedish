@@ -5,7 +5,7 @@ import {prevButtonIcon, nextButtonIcon} from "constants";
 import {GoodsBlock} from "components";
 import {PrevButton, NextButton} from "containers/SideDishContents/SideDishContents.styled";
 
-function Slider({sideDishTitle}) {
+function Slider({sideDishTitle, openModal}) {
   const [goodsData, setGoodsData] = useState([]);
   const [sliderState, setSliderState] = useState({clickedButton: "", list: ""});
   const [position, setPosition] = useState(0);
@@ -62,7 +62,7 @@ function Slider({sideDishTitle}) {
         <ul className="sideDishList" ref={sideDishList}>
           {goodsData.map(
             ({id, image, productName, description, price, eventBadge, early_delivery, discountedRate}) => (
-              <li key={id}>
+              <li key={id} onClick={openModal}>
                 <GoodsBlock
                   thumb={image}
                   name={productName}

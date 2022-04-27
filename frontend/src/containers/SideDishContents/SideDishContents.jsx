@@ -1,12 +1,11 @@
-import {SideDishContentsList} from 'components';
-// import './SideDishContents.css';
-import {StyledSideDishContents} from './SideDishContents.styled';
+import {SideDishContentsList} from "components";
+import {StyledSideDishContents} from "./SideDishContents.styled";
 
-function SideDishContents() {
+function SideDishContents({openModal}) {
   return (
     <StyledSideDishContents>
       <ul>
-        <SideDishContentsList />
+        <SideDishContentsList openModal={openModal} />
       </ul>
     </StyledSideDishContents>
   );
