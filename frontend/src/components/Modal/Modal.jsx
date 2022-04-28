@@ -1,7 +1,19 @@
 import React, {useState, useEffect} from "react";
 import {fetchData, postData} from "utils/utils";
 import {serverURL} from "constants/urlPath";
-import {DarkBackground, ModalBlock, CloseButton} from "./Modal.styled";
+import {
+  DarkBackground,
+  ModalBlock,
+  CloseButton,
+  InnerModalBlock,
+  ProductImages,
+  MainThumb,
+  SubThumb,
+  Product,
+  ProductInfo,
+  OrderButton,
+  SuccessOrder,
+} from "./Modal.styled";
 
 function Modal({visible, onClose, productId}) {
   //const [goodsData, setGoodsData] = useState([]);
@@ -51,7 +63,7 @@ function Modal({visible, onClose, productId}) {
                 <SubThumb></SubThumb>
               </ProductImages>
               <Product>
-                <ProductInfo>{goodsData}</ProductInfo>
+                <ProductInfo></ProductInfo>
                 <OrderButton onClick={handleOrder}>주문하기</OrderButton>
               </Product>
             </InnerModalBlock>

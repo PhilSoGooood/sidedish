@@ -9,10 +9,7 @@ function Slider({sideDishTitle, openModal}) {
   const [goodsData, setGoodsData] = useState([]);
   const [sliderState, setSliderState] = useState({clickedButton: "", list: ""});
   const [position, setPosition] = useState(0);
-  const [sliderHiddenLeft, setSliderHiddenLeft] = useState(0);
-  const [sliderHiddenRight, setSliderHiddenRight] = useState(
-    goodsData.length >= 4 ? goodsData.length - 4 : goodsData.length,
-  );
+
   const sideDishList = useRef();
   const sliderPrevButton = useRef();
   const sliderNextButton = useRef();
