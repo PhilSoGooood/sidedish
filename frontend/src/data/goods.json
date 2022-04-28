@@ -132,6 +132,16 @@
       "eventBadge": "event",
       "discountedRate": 10,
       "early_delivery": true
+    },
+    {
+      "id": 14,
+      "image": "https://crcf.cookatmarket.com/product/images/2020/09/mata_1599459539_5287_720.jpg",
+      "productName": "오리 주물럭_반조리",
+      "description": "감칠맛 나는 매콤한 양념",
+      "price": 15800,
+      "eventBadge": "event",
+      "discountedRate": 10,
+      "early_delivery": true
     }
   ],
   "side": [
@@ -194,16 +204,6 @@
       "eventBadge": "event",
       "discountedRate": 10,
       "early_delivery": true
-    },
-    {
-      "id": 18,
-      "image": "https://mblogthumb-phinf.pstatic.net/MjAxODA5MTZfMjQz/MDAxNTM3MTA5OTEyOTg0.sI-pOmBovt-SCWKzMdKBwBGHHTvTIJ9TWchLLH_UgZIg.kPc3Lqgn1iWqx-NxhrJiJWD0i1P4clYnwtQTrwyJ3UEg.JPEG.dew36/image_4937538991537109879126.jpg?type=w800",
-      "productName": "소갈비찜",
-      "description": "감칠맛 나는 매콤한 양념",
-      "price": 28900,
-      "eventBadge": "lauching",
-      "discountedRate": 20,
-      "early_delivery": false
     }
   ],
   "meat": [

@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useRef, useCallback} from "react";
-import {fetchData} from "utils/utils";
+import {fetchData, hasClass} from "utils/utils";
 import {serverURL} from "constants/urlPath";
 import {prevButtonIcon, nextButtonIcon} from "constants";
 import {GoodsBlock} from "components";
@@ -9,6 +9,8 @@ function Slider({sideDishTitle, openModal}) {
   const [goodsData, setGoodsData] = useState([]);
   const [sliderState, setSliderState] = useState({clickedButton: "", list: ""});
   const [position, setPosition] = useState(0);
+  const [firstIndex, setFirstIndex] = useState(1);
+  const [lastIndex, setLastIndex] = useState(4);
 
   const sideDishList = useRef();
   const sliderPrevButton = useRef();
@@ -20,20 +22,28 @@ function Slider({sideDishTitle, openModal}) {
   }, [sideDishTitle]);
 
   const handleClickedButton = ({target}) => {
-    const hasClass = (element, className) => {
-      return element.classList.contains(className);
+    const isNextButton = hasClass(target, "nextButton") || hasClass(target, "nextButtonIcon");
+
+    const calcRest = isNextButton => {
+      return isNextButton ? goodsData.length - lastIndex : firstIndex - 1;
     };
 
-    const current = hasClass(target, "nextButton") || hasClass(target, "nextButtonIcon");
+    let rest = calcRest(isNextButton);
+    if (rest >= 4) rest = 4;
+
+    const first = firstIndex + (isNextButton ? rest : -rest);
+
+    setFirstIndex(first);
+    setLastIndex(first + 3);
 
     setSliderState({
       ...sliderState,
-      clickedButton: current,
+      clickedButton: isNextButton,
       list: sideDishList.current,
     });
 
     const goodBlockWidth = 326;
-    setPosition(current ? position - 4 * goodBlockWidth : position + 4 * goodBlockWidth);
+    setPosition(isNextButton ? position - rest * goodBlockWidth : position + rest * goodBlockWidth);
   };
 
   useEffect(() => {
