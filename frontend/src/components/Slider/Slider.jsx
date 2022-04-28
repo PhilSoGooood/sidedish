@@ -1,26 +1,23 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useState, useEffect, useRef, useCallback} from "react";
 import {fetchData} from "utils/utils";
 import {serverURL} from "constants/urlPath";
 import {prevButtonIcon, nextButtonIcon} from "constants";
 import {GoodsBlock} from "components";
 import {PrevButton, NextButton} from "containers/SideDishContents/SideDishContents.styled";
 
-function Slider({sideDishTitle}) {
+function Slider({sideDishTitle, openModal}) {
   const [goodsData, setGoodsData] = useState([]);
   const [sliderState, setSliderState] = useState({clickedButton: "", list: ""});
   const [position, setPosition] = useState(0);
-  const [sliderHiddenLeft, setSliderHiddenLeft] = useState(0);
-  const [sliderHiddenRight, setSliderHiddenRight] = useState(
-    goodsData.length >= 4 ? goodsData.length - 4 : goodsData.length,
-  );
+
   const sideDishList = useRef();
   const sliderPrevButton = useRef();
   const sliderNextButton = useRef();
 
-  const fetchAPI = async () => {
+  const fetchAPI = useCallback(async () => {
     const data = await fetchData(`${serverURL}/${sideDishTitle}`);
     setGoodsData(data);
-  };
+  }, [sideDishTitle]);
 
   const handleClickedButton = ({target}) => {
     const hasClass = (element, className) => {
@@ -41,7 +38,7 @@ function Slider({sideDishTitle}) {
 
   useEffect(() => {
     fetchAPI();
-  }, []);
+  }, [fetchAPI]);
 
   useEffect(() => {
     if (sliderState.clickedButton === "") return;
@@ -62,7 +59,12 @@ function Slider({sideDishTitle}) {
         <ul className="sideDishList" ref={sideDishList}>
           {goodsData.map(
             ({id, image, productName, description, price, eventBadge, early_delivery, discountedRate}) => (
-              <li key={id}>
+              <li
+                key={id}
+                onClick={() => {
+                  openModal(id);
+                }}
+              >
                 <GoodsBlock
                   thumb={image}
                   name={productName}
