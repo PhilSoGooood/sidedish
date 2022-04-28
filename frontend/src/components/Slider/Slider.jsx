@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useRef, useCallback} from "react";
 import {fetchData, hasClass} from "utils/utils";
 import {serverURL} from "constants/urlPath";
-import {prevButtonIcon, nextButtonIcon} from "constants";
+import {prevButtonIcon, nextButtonIcon, goodsBlockWidth} from "constants";
 import {GoodsBlock} from "components";
-import {PrevButton, NextButton} from "containers/SideDishContents/SideDishContents.styled";
+import {PrevButton, NextButton, PrevButtonIcon, NextButtonIcon} from "./Slider.styled";
 
 function Slider({sideDishTitle, openModal}) {
   const [goodsData, setGoodsData] = useState([]);
@@ -42,8 +42,7 @@ function Slider({sideDishTitle, openModal}) {
       list: sideDishList.current,
     });
 
-    const goodBlockWidth = 326;
-    setPosition(isNextButton ? position - rest * goodBlockWidth : position + rest * goodBlockWidth);
+    setPosition(isNextButton ? position - rest * goodsBlockWidth : position + rest * goodsBlockWidth);
   };
 
   useEffect(() => {
@@ -60,10 +59,26 @@ function Slider({sideDishTitle, openModal}) {
   return (
     <div className="event-slider">
       <PrevButton onClick={handleClickedButton} className="prevButton" ref={sliderPrevButton}>
-        <img className="prevButtonIcon" src={prevButtonIcon} alt="prevButtonIcon"></img>
+        <PrevButtonIcon
+          className="prevButtonIcon"
+          src={prevButtonIcon}
+          alt="prevButtonIcon"
+          position={position}
+        ></PrevButtonIcon>
       </PrevButton>
-      <NextButton onClick={handleClickedButton} className="nextButton" ref={sliderNextButton}>
-        <img className="nextButtonIcon" src={nextButtonIcon} alt="nextButtonIcon"></img>
+      <NextButton
+        onClick={handleClickedButton}
+        className="nextButton"
+        ref={sliderNextButton}
+        position={position}
+      >
+        <NextButtonIcon
+          className="nextButtonIcon"
+          src={nextButtonIcon}
+          alt="nextButtonIcon"
+          lastIndex={lastIndex}
+          goodsDataLength={goodsData.length}
+        ></NextButtonIcon>
       </NextButton>
       <div className="sideDishContainer">
         <ul className="sideDishList" ref={sideDishList}>

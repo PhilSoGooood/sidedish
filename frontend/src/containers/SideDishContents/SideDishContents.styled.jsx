@@ -5,24 +5,6 @@ const StyledSideDishContents = styled.div`
   width: 1280px;
 `;
 
-const PrevButton = styled.button`
-  position: absolute;
-  margin-top: 200px;
-  background-color: transparent;
-  border: none;
-
-  left: 36px;
-`;
-
-const NextButton = styled.button`
-  position: absolute;
-  margin-top: 200px;
-  background-color: transparent;
-  border: none;
-
-  right: 36px;
-`;
-
 const ShowAllCategoryButton = styled.button`
   display: flex;
   flex-direction: row;
@@ -62,4 +44,4 @@ const ShowAllCategoryButton = styled.button`
   }
 `;
 
-export {StyledSideDishContents, PrevButton, NextButton, ShowAllCategoryButton};
+export {StyledSideDishContents, ShowAllCategoryButton};
