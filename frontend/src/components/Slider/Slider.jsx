@@ -62,7 +62,12 @@ function Slider({sideDishTitle, openModal}) {
         <ul className="sideDishList" ref={sideDishList}>
           {goodsData.map(
             ({id, image, productName, description, price, eventBadge, early_delivery, discountedRate}) => (
-              <li key={id} onClick={openModal}>
+              <li
+                key={id}
+                onClick={() => {
+                  openModal(id);
+                }}
+              >
                 <GoodsBlock
                   thumb={image}
                   name={productName}

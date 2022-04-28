@@ -15,9 +15,11 @@ const GlobalStyles = createGlobalStyle`
 
 function App() {
   const [openDetail, setOpenDetail] = useState(false);
+  const [productId, setProductId] = useState(0);
 
-  const openModal = () => {
+  const openModal = productId => {
     setOpenDetail(true);
+    setProductId(productId);
   };
 
   const closeModal = () => {
@@ -30,7 +32,7 @@ function App() {
       <Header />
       <SpecialPromotion openModal={openModal} />
       <SideDishContents openModal={openModal} />
-      <Modal visible={openDetail} onClose={closeModal} />
+      <Modal visible={openDetail} onClose={closeModal} productId={productId} />
     </div>
   );
 }

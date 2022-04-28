@@ -25,4 +25,55 @@ const CloseButton = styled.button`
   border: none;
 `;
 
-export {DarkBackground, ModalBlock, CloseButton};
+const InnerModalBlock = styled.div`
+  display: flex;
+`;
+
+const ProductImages = styled.div`
+  width: 392px;
+  height: 472px;
+`;
+
+const MainThumb = styled.img`
+  width: 392px;
+  height: 392px;
+`;
+
+const SubThumb = styled.img`
+  width: 72px;
+  height: 72px;
+`;
+
+const Product = styled.div``;
+
+const ProductInfo = styled.div`
+  width: 440px;
+  height: 237px;
+`;
+
+const OrderButton = styled.button`
+  width: 440px;
+  height: 58px;
+  background: #000;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+`;
+
+const SuccessOrder = styled.h1`
+  text-align: center;
+`;
+
+export {
+  DarkBackground,
+  ModalBlock,
+  CloseButton,
+  InnerModalBlock,
+  ProductImages,
+  MainThumb,
+  SubThumb,
+  Product,
+  ProductInfo,
+  OrderButton,
+  SuccessOrder,
+};
