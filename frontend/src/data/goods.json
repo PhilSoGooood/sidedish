@@ -445,23 +445,5 @@
     }
   ],
   "order": [
-    {
-      "productId": 1,
-      "quantity": 3,
-      "price": 37920,
-      "id": 1
-    },
-    {
-      "productId": 2,
-      "quantity": 6,
-      "price": 156060,
-      "id": 2
-    },
-    {
-      "productId": 2,
-      "quantity": 7,
-      "price": 182070,
-      "id": 3
-    }
   ]
 }

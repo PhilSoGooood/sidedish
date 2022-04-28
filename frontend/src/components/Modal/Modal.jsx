@@ -10,10 +10,19 @@ import {
   ProductImages,
   MainThumb,
   SubThumb,
-  Product,
+  ProductDetails,
   ProductInfo,
   OrderButton,
   SuccessOrder,
+  PriceBox,
+  ProductPrice,
+  OrderBox,
+  TotalPriceBox,
+  OrderCountBox,
+  TotalPriceTitle,
+  TotalPrice,
+  OrderCount,
+  ProductName,
 } from "./Modal.styled";
 
 function Modal({visible, onClose, productId}) {
@@ -73,10 +82,10 @@ function Modal({visible, onClose, productId}) {
                   <MainThumb src={goodsData.image[0].imagePath}></MainThumb>
                   <SubThumb></SubThumb>
                 </ProductImages>
-                <Product>
+                <ProductDetails>
                   <ProductInfo>
-                    <p className="productName">{goodsData.productName}</p>
-                    <div className="priceBox">
+                    <ProductName>{goodsData.productName}</ProductName>
+                    <PriceBox>
                       <div className="eventBadge">
                         {goodsData.eventBadge !== "none" && (
                           <img
@@ -86,8 +95,7 @@ function Modal({visible, onClose, productId}) {
                           ></img>
                         )}
                       </div>
-
-                      <div className="productPrice">
+                      <ProductPrice>
                         <p className="discountedPrice">
                           {Number(goodsData.price * (1 - goodsData.discountRate)).toLocaleString("en") + "원"}
                         </p>
@@ -96,10 +104,10 @@ function Modal({visible, onClose, productId}) {
                             {Number(goodsData.price).toLocaleString("en") + "원"}
                           </p>
                         )}
-                      </div>
-                    </div>
-                    <div className="orderBox">
-                      <div className="orderCountBox">
+                      </ProductPrice>
+                    </PriceBox>
+                    <OrderBox>
+                      <OrderCountBox>
                         <button>
                           <img
                             className="minusOrderIcon"
@@ -111,7 +119,7 @@ function Modal({visible, onClose, productId}) {
                             }}
                           ></img>
                         </button>
-                        <p className="orderCount">{quantity}</p>
+                        <OrderCount>{quantity}</OrderCount>
                         <button>
                           <img
                             className="plusOrderIcon"
@@ -120,15 +128,15 @@ function Modal({visible, onClose, productId}) {
                             onClick={() => setQuantity(quantity + 1)}
                           ></img>
                         </button>
-                      </div>
-                      <div className="totalPriceBox">
-                        <p className="totalPriceTitle">총 주문금액</p>
-                        <p className="totalPrice">{Number(totalPrice).toLocaleString("en") + "원"}</p>
-                      </div>
-                    </div>
+                      </OrderCountBox>
+                      <TotalPriceBox>
+                        <TotalPriceTitle>총 주문금액</TotalPriceTitle>
+                        <TotalPrice>{Number(totalPrice).toLocaleString("en") + "원"}</TotalPrice>
+                      </TotalPriceBox>
+                    </OrderBox>
                   </ProductInfo>
                   <OrderButton onClick={handleOrder}>주문하기</OrderButton>
-                </Product>
+                </ProductDetails>
               </InnerModalBlock>
             </>
           )
