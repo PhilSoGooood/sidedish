@@ -12,23 +12,25 @@ const ShowAllCategoryButton = styled.button`
   padding: 16px 24px;
 
   position: absolute;
+
   width: 203px;
   height: 62px;
   left: 670px;
   ${({showAllCategory}) => {
     if (showAllCategory)
       return css`
-        top: 2602px;
+        top: 2700px;
       `;
     else
       return css`
-        top: 1502px;
+        top: 1552px;
       `;
   }}
 
   border: 1px solid #ebebeb;
   background-color: #fff;
   box-sizing: border-box;
+  margin-bottom: 50px;
 
   p {
     position: static;
